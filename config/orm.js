@@ -44,6 +44,7 @@ var orm = {
     connection: connection,
     all: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
+        // console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -55,6 +56,7 @@ var orm = {
         var queryString = "SELECT "
         queryString += cols.toString();
         queryString += " FROM " + tableInput + ";";
+        // console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -71,6 +73,7 @@ var orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
+        // console.log(queryString);
 
 
         connection.query(queryString, vals, function (err, result) {
@@ -90,7 +93,7 @@ var orm = {
         queryString += " WHERE ";
         queryString += condition;
 
-        console.log(queryString);
+        // console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -103,6 +106,7 @@ var orm = {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
+        // console.log(queryString);
 
         connection.query(queryString, function (err, result) {
             if (err) {
