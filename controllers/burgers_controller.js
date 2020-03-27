@@ -13,13 +13,13 @@ router.get("/", function (req, res) {
         };
         res.render("index", hbsObject);
     });
-});
-router.post("/api/burgers", (req, res) => {
+})
+.post("/api/burgers", (req, res) => {
     burger.create(["burger_name"], [req.body.burger_name], result => {
         res.json({ id: result.insertId });
     })
-});
-router.put("/api/burgers/:id", (req, res) => {
+})
+.put("/api/burgers/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     burger.update({
             devoured: req.body.devoured
@@ -35,7 +35,7 @@ router.put("/api/burgers/:id", (req, res) => {
     )
     res.json(req.body)
 })
-.delete((req,res) => {
+.delete("/api/burgers/:id", (req,res) => {
     const condition = "id = " + req.params.id;
     burger.delete(condition, result => {
         if (result.changedRows == 0) {
