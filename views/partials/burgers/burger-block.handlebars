@@ -1,8 +1,12 @@
-<li>
-	{{burger_name}}
-    {{#if devoured}}
-    <button class="change-sleep" data-id="{{id}}" data-newsleep="{{devoured}}">
-		Devour
-	</button>
-    {{/if}}
+<li class="list-group-item">
+    <div class="container">
+        <div class="row">
+            <div class='col-sm'><span>{{burger_name}}</span></div>
+            {{#if devoured}}
+            <button type='button' class="col-auto change-sleep btn btn-primary pull-right" data-id="{{id}}" data-newsleep="{{devoured}}">
+                Devour
+            </button>
+            {{/if}}
+        </div>
+    </div>
 </li>
