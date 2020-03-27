@@ -11,7 +11,7 @@
 Burger logger with MySQL, Node, Express, Handlebars and a homemade ORM.
 ```
 
-[![Image that shows the project](./assets/img/icon.gif)](https://DVasquez4155.github.io/Eat-Da-Burger)
+[![Image that shows the project](./assets/img/icon.png)](https://DVasquez4155.github.io/Eat-Da-Burger)
 
 ## Installation
 ```npm i```
