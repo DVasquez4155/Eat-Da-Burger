@@ -2,11 +2,9 @@
 $(function () {
     $(".change-devour").on("click", function (event) {
         var id = $(this).data("id");
-
         var newState = {
             devoured: true
         };
-
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
@@ -14,6 +12,19 @@ $(function () {
         }).then(
             function () {
                 console.log("Devoured burger");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+    $("#delete").on("click", function (event) {
+        var id = $(this).data("id");
+        // Send the DELETE request.
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("Deleted burger");
                 // Reload the page to get the updated list
                 location.reload();
             }
